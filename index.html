@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation de formulaire</title>
+    <link rel="stylesheet" href="style.css">
+   
+</head>
+
+<body>
+    <header>
+        <h1>Validation de Formulaire</h1>
+    </header>
+
+    <div class="box-login">
+        <h2>Inscrivez-vous.</h2>
+
+        <form id="myForm">
+            <div class="form-groupe">
+             
+                <label for="utilisateur">Nom d'utilisateur</label>
+                <input type="text" id="utilisateur" placeholder="Nom d'utilisateur" maxlength="24" required>
+                <img src="images/check.svg" alt="icône de validation" class="icone-verif">
+                <img src="images/error.svg" alt="icône de validation" class="icone-verif-error">
+                
+                <span class="message-alerte"></span>
+             
+                
+            </div>
+
+            <div class="form-groupe">
+                <label for="email">Entrez votre mail</label>
+                <input type="email" id="email" placeholder="Votre mail" required>
+                <img src="images/check.svg" alt="icône de validation" class="icone-verif">
+                <img src="images/error.svg" alt="icône de validation" class="icone-verif-error">
+                <span class="message-alerte"></span>
+            </div>
+
+            <div class="form-groupe">
+                <label for="mdp">Mot de passe</label>
+                <input type="password" id="mdp" placeholder="Mot de passe" required>
+                <img src="images/check.svg" alt="icône de validation" class="icone-verif">
+                <img src="images/error.svg" alt="icône de validation" class="icone-verif-error">
+                <span class="message-alerte">Un symbole, une lettre minuscule, un chiffre.</span>
+                <div class="ligne">
+                    <div class="l1"><span>faible</span></div>
+                    <div class="l2"><span>moyen</span></div>
+                    <div class="l3"><span>fort</span></div>
+                </div>
+            </div>
+
+            <div class="form-groupe">
+                <label for="mdpconf">Confirmer le mot de passe</label>
+                <input type="password" id="mdpconf" placeholder="Confirmez" required>
+                <img src="images/check.svg" alt="icône de validation" class="icone-verif">
+                <img src="images/error.svg" alt="icône de validation" class="icone-verif-error">
+                <span class="message-alerte">Votre mot de passe ne pas identique</span>
+            </div>
+
+            <button  id="sign_up">Création du compte</button>
+        </form>
+    </div>
+
+    <script src="index.js"> </script>
+</body>
+
+</html>
