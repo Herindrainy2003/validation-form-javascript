@@ -24,17 +24,18 @@ sign_up.disabled = true ;
 
 let validity = 0 //pour stocker la valeur du champ valider
 
-function displayError(input , valid ,message){
+function displayError(input , valid ){
      let index = Array.from(form.elements).indexOf(input);
      if(valid === false){
          message_alerte[index].style.display = 'block'
          icone_verif_error[index].style.display = 'block'
-         message_alerte[index].textContent  = message
+       
      }else if(valid === true){
         message_alerte[index].style.display = 'none'
         icone_verif[index].style.display = 'block'
         icone_verif_error[index].style.display = 'none'
         validity++
+        console.log(validity)
         validate()
      }            
 }
@@ -43,9 +44,7 @@ function displayError(input , valid ,message){
 username.addEventListener('input' , (event) => {
 let username_value = event.target.value
 if(!usernameRegex.test(username_value)){
-     displayError(username , false , 'Commences pas par de chiffre svp!')
-    }else if(!usernameRegex1.test(username_value)){
-        displayError(username , false , 'Au moins 03 caracteres et 23 max')
+     displayError(username , false )
     }else{
         displayError(username  , true)
     }
