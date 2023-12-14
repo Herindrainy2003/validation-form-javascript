@@ -12,9 +12,8 @@ let l1_password = document.querySelector('.l1')
 let l2_password = document.querySelector('.l2')
 let l3_password = document.querySelector('.l3')
     
-let usernameRegex = /^[a-zA-Z_-]/;
-let usernameRegex1 = /[a-zA-Z0-9_-]{3,23}$/;
-let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+let usernameRegex = /^[a-zA-Z_-][a-zA-Z0-9_-]{3,23}$/;
+let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,4}$/;
 let passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)/;
 let passwordRegex1 = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])/;
 let passwordRegex2 = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
@@ -26,7 +25,15 @@ let validity = 0 //pour stocker la valeur du champ valider
 
 function displayError(input , valid ){
      let index = Array.from(form.elements).indexOf(input);
-     if(valid === false){
+ if(input.value === ''){
+    message_alerte[index].style.display = 'none'
+    icone_verif_error[index].style.display = 'none'
+    icone_verif[index].style.display = 'none'
+    l1_password.style.display = 'none'
+    l2_password.style.display = 'none'
+    l3_password.style.display = 'none'
+
+ }else if(valid === false){
          message_alerte[index].style.display = 'block'
          icone_verif_error[index].style.display = 'block'
        
